@@ -41,7 +41,11 @@ It's safe to run more than once as it will only ever fix up whatever's missing o
 
 ### Upload project
 
-Uploads all project files to the Pico, obeying any sync rules as defined in the [Settings]({{< ref "settings.md" >}}).
+Uploads all project files to the Pico, obeying any sync rules as defined in the [Settings]({{< ref "settings.md" >}}). After uploading, the board will be reset.
+
+If you want to sync only a certain folder in your project, use the [`sync_folder`]({{< ref "settings.md#sync_folder" >}}) field in the settings and add the folder name.
+
+By default, only the following file types are synchronized: `py,txt,log,json,xml,html,js,css,mpy`. This can be changed using the [`sync_file_types`](({{< ref "settings.md#sync_file_types" >}})) field in the settings.
 
 ### Upload current file only
 
@@ -57,7 +61,9 @@ Runs the Python content of the open file on the Pico board without transferring 
 
 ### Run current selection
 
-Runs the selected lines of Python code on the Pico board. Useful for debugging.
+Runs the selected lines of Python code on the Pico board.
+
+This can be used to step though your code on a line-by-line basis, and allows you to inspect and debug your code.
 
 ### Delete all files from board
 
@@ -85,3 +91,14 @@ Shows a listing of all available serial ports in the REPL console.
 
 Shows a comprehensive list of version information in the REPL console, including VS Code, Electron, Node and Firmware versions. This is useful when raising bugs over in the [GitHub project](https://github.com/cpwood/Pico-Go/issues).
 
+## Keyboard Shortcuts
+
+| Action           | Windows / Linux    | macOS                 |
+| ---------------- | ------------------ | --------------------- |
+| (Re)connect      | `ctrl-shift-c`     | `command-shift-c`     |
+|  Configure project         | `ctrl-shift-i` | `command-shift-i` |
+| Global settings  | `ctrl-shift-g`     | `command-shift-g`     |
+| Upload project   | `ctrl-shift-u`     | `command-shift-u`     |
+| Upload current file only | `ctrl-shift-f`     | `command-shift-f`     |
+| Run current file | `ctrl-shift-r`     | `command-shift-r`     |
+| Run current line | `ctrl-shift-enter` | `command-shift-enter` |

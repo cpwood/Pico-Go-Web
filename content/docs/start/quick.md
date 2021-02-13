@@ -21,7 +21,9 @@ You'll need to be running [Visual Studio Code](https://code.visualstudio.com/) o
 * Mac - `x64` (Intel) or `arm64` (Silicon)
 * Linux - `x64` or `arm64`
 
-Pico-Go also needs Node.js to be installed (**in addition** to the version of Node that ships with VS Code).  Download and install [Node.js](https://nodejs.org/) for your platform.
+Pico-Go needs Node.js to be installed (**in addition** to the version of Node that ships with VS Code).  Download and install [Node.js](https://nodejs.org/) for your platform.
+
+Pico-Go also needs Python to be installed. Download and install [Python](https://www.python.org/downloads/) for your platform too.
 
 ## Installing the extension
 

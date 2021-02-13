@@ -25,6 +25,8 @@ Pico-Go needs Node.js to be installed (**in addition** to the version of Node th
 
 Pico-Go also needs Python to be installed. Download and install [Python](https://www.python.org/downloads/) for your platform too.
 
+Finally, you'll need to [install Pip](https://pip.pypa.io/en/stable/installing/).
+
 ## Installing the extension
 
 You can download the extension from VS Code's Extensions panel by searching for `Pico-Go`. You can also download the extension manually from the [Marketplace](https://marketplace.visualstudio.com/items?itemName=ChrisWood.pico-go).
@@ -70,6 +72,8 @@ Now click the Run button on the Pico-Go status bar:
 and bask in your Pico glory!
 
 <img src="/images/flash.gif" class="anim"/>
+
+> If you can't seem to connect to your Pico, follow these [troubleshooting steps]({{< ref "../help/connect.md" >}}).
 
 ### Copying files
 

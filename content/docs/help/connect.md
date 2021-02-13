@@ -13,9 +13,19 @@ weight: 250
 toc: true
 ---
 
+## Linux Users
+
+There might be a permissions issue getting access to the serial port. To fix this, run:
+
+```
+sudo usermod -a -G dialout $USER
+```
+
+then reboot.
+
 ## The Basics
 
-Two _really_ quick checks you can make before jumping into anything more technical:
+Here are two _really_ quick checks you can make before jumping into anything more technical:
 
 1. That it's plugged in properly with the computer-side and Pico-side both being fully pushed in all the way.
 2. That another piece of software isn't already using the serial port. Remember, *only one piece of software can use your Pico at a time.* So if you're using Thonny and it's connected to the Pico, VS Code *won't* be able to connect.
@@ -63,9 +73,3 @@ This returns output as follows:
 ```
 
 We can see from this output from a Mac that `Visual Studio Code - Insiders.app` is using the serial port. We can then try and establish whether this is another zombie instance of VS Code that's holding on to the serial port and kill the process off, if necessary.
-
-If you're a Linux user and can't connect to your board, there might also be a permission issue to access the serial port. To fix this, run:
-
-```
-sudo usermod -a -G dialout $USER
-```

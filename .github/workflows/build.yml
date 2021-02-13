@@ -1,0 +1,46 @@
+name: Pico-Go Web
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+
+    - name: Install Hugo
+      uses: peaceiris/actions-hugo@v2
+      with:
+        hugo-version: 'latest'
+        extended: true
+    
+    - name: Check install Hugo
+      run: hugo version
+
+    - name: Install dependencies
+      run: npm ci
+    
+    - name: Check for linting errors
+      run: npm test
+    
+    - name: Delete temporary directories
+      run: npm run clean
+    
+    - name: Build production website
+      run: npm run build
+
+    - name: Deploy to pico-go.net
+      uses: dswistowski/surge-sh-action@v1
+      with:
+        domain: 'pico-go.net'
+        project: 'public'
+        login: ${{ secrets.surge_login }}
+        token: ${{ secrets.surge_token }}

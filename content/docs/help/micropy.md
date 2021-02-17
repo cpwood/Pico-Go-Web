@@ -60,8 +60,8 @@ This is where the [**Pico-Stub**](https://github.com/cpwood/Pico-Stub) project c
 [Download a copy](https://github.com/cpwood/Pico-Stub/archive/main.zip) of the repo and extract the zip file. Then add the stubs to Micropy CLI:
 
 ```
-cd Pico-Stub-main/stubs  
-micropy stubs add micropython-rp2-1_13-290
+cd Pico-Stub-main/dist  
+micropy stubs add micropy-cli
 ```
 
 ## Other VS Code Extensions
@@ -94,6 +94,8 @@ If you intend to put your project in a Git repository afterwards, you’ll proba
 Finally, you’ll need to choose the Pico’s **stubs**:
 
 ![](/images/micropy-init-3.png)
+
+Don't worry if the numbers look slightly different for you; this just means you're on a different version of the Pico firmware.
 
 All being well, you should see something like this:
 

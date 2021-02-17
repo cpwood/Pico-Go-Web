@@ -25,8 +25,6 @@ Pico-Go needs Node.js to be installed (**in addition** to the version of Node th
 
 Pico-Go also needs Python to be installed. Download and install [Python](https://www.python.org/downloads/) for your platform too.
 
-Finally, you'll need to [install Pip](https://pip.pypa.io/en/stable/installing/).
-
 ## Installing the extension
 
 You can download the extension from VS Code's Extensions panel by searching for `Pico-Go`. You can also download the extension manually from the [Marketplace](https://marketplace.visualstudio.com/items?itemName=ChrisWood.pico-go).
@@ -43,6 +41,8 @@ Then choose `Pico-Go > Configure project`.
 
 This will set up code auto-completion for you.
 
+> If you're prompted to install recommended extensions or reload VS Code, make sure you do just that!
+
 <img src="/images/configure-project.gif" class="anim"/>
 
 ### Make an LED flash
@@ -55,13 +55,13 @@ Here's that code in full:
 
 ```python
 from machine import Pin
-import utime
+import time
 
 pin = Pin(25, Pin.OUT)
 
 while True:
     pin.toggle()
-    utime.sleep_ms(1000)
+    time.sleep_ms(1000)
 
 ```
 

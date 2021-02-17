@@ -59,11 +59,15 @@ Downloads all files from the Pico, obeying any sync rules as defined in the [Set
 
 Runs the Python content of the open file on the Pico board without transferring the file itself. Useful for debugging.
 
+Note that a soft reset of the board _is_ performed before the code starts running.
+
 ### Run current selection
 
 Runs the selected lines of Python code on the Pico board.
 
 This can be used to step though your code on a line-by-line basis, and allows you to inspect and debug your code.
+
+Note that a soft reset of the board _isn't_ performed before the code starts running.
 
 ### Delete all files from board
 
@@ -76,6 +80,16 @@ Opens up the project settings configuration file in VS Code. These values overri
 ### Global settings
 
 Opens up the global settings configuration file in VS Code.
+
+### Reset
+
+#### Soft
+
+Performs a soft reset of the interpreter, deleting all Python objects and resetting the Python heap.  It tries to retain the serial connection.
+
+#### Hard
+
+Resets the device in a manner similar to unplugging and then replugging the USB cable.
 
 ### Extra
 
@@ -102,3 +116,4 @@ Shows a comprehensive list of version information in the REPL console, including
 | Upload current file only | `ctrl-shift-f`     | `command-shift-f`     |
 | Run current file | `ctrl-shift-r`     | `command-shift-r`     |
 | Run current line | `ctrl-shift-enter` | `command-shift-enter` |
+| Soft reset       | `ctrl-shift-d`     | `command-shift-d`     |

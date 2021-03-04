@@ -13,7 +13,14 @@ weight: 250
 toc: true
 ---
 
-## Linux Users
+## The Basics
+
+Here are two _really_ quick checks you can make before jumping into anything more technical:
+
+1. That it's plugged in properly with the computer-side and Pico-side both being fully pushed in all the way.
+2. That another piece of software isn't already using the serial port. Remember, *only one piece of software can use your Pico at a time.* So if you're using Thonny and it's connected to the Pico, VS Code *won't* be able to connect.
+
+### Linux Users
 
 There might be a permissions issue getting access to the serial port. To fix this, run:
 
@@ -23,14 +30,25 @@ sudo usermod -a -G dialout $USER
 
 then reboot.
 
-## The Basics
+### Wrong COM port or device?
 
-Here are two _really_ quick checks you can make before jumping into anything more technical:
+If you note that Pico-Go is choosing the wrong COM port on Windows or the wrong device in macOS or Linux, you can set the correct device manually in your Global Settings file.
 
-1. That it's plugged in properly with the computer-side and Pico-side both being fully pushed in all the way.
-2. That another piece of software isn't already using the serial port. Remember, *only one piece of software can use your Pico at a time.* So if you're using Thonny and it's connected to the Pico, VS Code *won't* be able to connect.
+Type `Ctrl+Shift+G` on Windows or Linux or `Cmd+Shift+G` on a Mac and change your settings as required, for example:
 
-## Other Quick Fixes
+```json
+	"auto_connect": false,
+	"manual_com_device": "COM4",
+```
+
+or on a Mac:
+
+```json
+	"auto_connect": false,
+	"manual_com_device": "/dev/tty.usbmodem0000000000002",
+```
+
+### Other Quick Fixes
 
 There are two things you can restart: your computer and the Pico.
 

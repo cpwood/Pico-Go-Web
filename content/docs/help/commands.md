@@ -35,7 +35,8 @@ This will:
 
 1. configure auto-completion for your project;
 2. configure linting (i.e. error and code-smell detection) for your project;
-3. prompt you to install any pre-requisite extensions.
+3. add a `pico-go.json` file to your project, allowing you to override global settings (if one doesn't already exist);
+4. prompt you to install any pre-requisite extensions.
 
 It's safe to run more than once as it will only ever fix up whatever's missing or broken. If you've cloned somebody else's repo and there isn't `.vscode` folder included, you may want to run this command immediately after cloning to get richer functionality.
 
@@ -73,10 +74,6 @@ Note that a soft reset of the board _isn't_ performed before the code starts run
 
 Deletes all files and directories from the board. Useful when starting a new project.
 
-### Project settings
-
-Opens up the project settings configuration file in VS Code. These values override the global settings values.
-
 ### Global settings
 
 Opens up the global settings configuration file in VS Code.
@@ -93,9 +90,9 @@ Resets the device in a manner similar to unplugging and then replugging the USB 
 
 ### Extra
 
-#### Get firmware version
+#### Show Pico Pin Map
 
-Shows the firmware version in the REPL console.
+Shows a pin-out diagram of the Pico board.
 
 #### List serial ports
 
@@ -110,7 +107,7 @@ Shows a comprehensive list of version information in the REPL console, including
 | Action           | Windows / Linux    | macOS                 |
 | ---------------- | ------------------ | --------------------- |
 | (Re)connect      | `ctrl-shift-c`     | `command-shift-c`     |
-|  Configure project         | `ctrl-shift-i` | `command-shift-i` |
+|  Configure project         | `ctrl-shift-i` (Windows)<br />`ctrl-shift-alt-i` (Linux) | `command-shift-i` |
 | Global settings  | `ctrl-shift-g`     | `command-shift-g`     |
 | Upload project   | `ctrl-shift-u`     | `command-shift-u`     |
 | Upload current file only | `ctrl-shift-f`     | `command-shift-f`     |

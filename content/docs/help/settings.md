@@ -56,11 +56,11 @@ Used when `auto_connect` is false. E.g. `COM3` or `/dev/tty.usbmodem000000000000
 | no       | yes    | `true` |
 
 ### open_on_start
-Whether to open the terminal and connect to the board when starting Code.
+Whether to open the terminal and connect to the board when starting Code. The default setting (from `v1.2` onward) is to _not_ launch the Pico Console unless the project has been [configured as a Pico-Go project]({{< ref "../help/commands.md#configure-project" >}}).
 
-| Project | Global | Default               |
-|---------|--------|-----------------------|
-| yes     | yes    | `true`                |
+| Project | Global | Default                                                      |
+| ------- | ------ | ------------------------------------------------------------ |
+| yes     | yes    | `false`  at _global_ level settings<br />`true` at _project_ level settings |
 
 ### py_ignore
 Comma-separated list of files and folders to ignore when uploading (no wildcard or regular expressions supported).

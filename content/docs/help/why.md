@@ -14,9 +14,11 @@ toc: true
 ---
 ## Background
 
-Pretty much 99.9% of the code in this repo is from the fantastic [Pymakr](https://github.com/pycom/pymakr-vsc) project. 
+Originally, pretty much 99.9% of the code in this repo was from the fantastic [Pymakr](https://github.com/pycom/pymakr-vsc) project. 
 
-Whilst the out-of-the-box version of Pymakr can talk to a Pico board after a little initial configuration, it makes certain assumptions about the capabilities of the board. For example, when transferring files, it attempts to calculate file hashes to check the file has copied correctly. The Python module that it attempts to use for this isn't available on the Pico, so uploading or downloading fails.
+Whilst the out-of-the-box version of Pymakr can talk to a Pico board after a little initial configuration, it made certain assumptions about the capabilities of the Pico board at the time it was released to the market. 
+
+For example, when transferring files, it attempted to calculate file hashes to check the file had copied correctly. The Python module that it attempted to use for this wasn't available on the Pico, so uploading or downloading failed. (The prerequisite modules are now present on the Pico and file hashing is now supported again.)
 
 There were two options available: change the existing Pymakr project so it could work with another manufacturer's board - i.e. add checks to detect whether a capability was available on the board before attempting an action - or create a derivative product.
 
@@ -26,12 +28,12 @@ For these reasons, Pico-Go was created using the Pymakr code as a starting point
 
 ## Differences to Pymakr
 
-At the time of writing, the main changes from the original Pymakr project are:
+Pico-Go now differs substantially to Pymakr:
 
 * Communication is via serial port only since there is no Wifi capability on the Pico;
-* File hash checks have been removed;
 * A new command has been added to the Command Palette allowing a user to delete all files and directories from their Pico board;
+* Pico Pin Map is now available from the Command Palette;
 * Documentation has been comprehensively updated, corrected and pruned;
-* Robustness around serial port integration has been improved;
 * Supports a wider range of platforms, including Linux ARM64 and Apple Silicon;
-* Provides auto-completion and intellisense out-of-the-box.
+* Provides auto-completion and intellisense out-of-the-box;
+* Complete refactor of codebase, moving from callbacks to `async`-`await` wherever possible, removing redundant code and rewriting the serial comms code significantly.

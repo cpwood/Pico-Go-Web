@@ -82,3 +82,9 @@ We're currently running your Python code on the Pico, however, what if we want t
 Firstly, rename `flash.py` to `main.py`. Then choose the `Upload` button from the toolbar. You'll see that `main.py` is transferred to the Pico and it will then reboot with the LED flashing!
 
 <img src="/images/upload.gif" class="anim"/>
+
+### Pin Map
+
+If you need a quick refresher on which pins can do what on the Pico board, or even just need help _locating_ a pin (it's often not easy on a soldered board!), check out `Pico-Go > Extras > Show Pico Pin Map`:
+
+<img src="/images/pin-map.gif" class="anim"/>

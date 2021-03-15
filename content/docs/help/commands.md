@@ -74,6 +74,14 @@ Note that a soft reset of the board _isn't_ performed before the code starts run
 
 Deletes all files and directories from the board. Useful when starting a new project.
 
+### Start FTP server
+
+Starts an FTP server running on port `2121` of your machine (`127.0.0.1`). This allows you to manage the files on your Pico through an FTP client of your choice. This might be a file manager external to VS Code or a VS Code extension.
+
+The username is `pico` and the default password is also `pico`, however the password can be changed in the [Global Settings]({{< ref "settings.md" >}}) by configuring the [`ftp_password`]({{< ref "settings.md#ftp_password" >}}) value.
+
+Note that the _Last Modified_ date shown in your FTP client will _always_ be "today". This is because the Pico doesn't store a meaningful timestamp against files or folders. Also, it's not possible to change the _mode_ of a file or folder (i.e. using `chmod`).
+
 ### Global settings
 
 Opens up the global settings configuration file in VS Code.
@@ -88,7 +96,11 @@ Performs a soft reset of the interpreter, deleting all Python objects and resett
 
 Resets the device in a manner similar to unplugging and then replugging the USB cable.
 
-### Extra
+### Help
+
+#### Getting started
+
+Takes you to this web site.
 
 #### Show Pico Pin Map
 
@@ -101,6 +113,14 @@ Shows a listing of all available serial ports in the REPL console.
 #### Get support info
 
 Shows a comprehensive list of version information in the REPL console, including VS Code, Electron, Node and Firmware versions. This is useful when raising bugs over in the [GitHub project](https://github.com/cpwood/Pico-Go/issues).
+
+#### Check for firmware updates
+
+This will check the firmware version of your Pico against the most recent _stable_ firmware version [available here](https://micropython.org/download/rp2-pico/). 
+
+If a newer version is available online, you can choose to download the firmware in your web browser.
+
+To apply the update, hold down the BOOTSEL button while plugging the board into your computer's USB port. The downloaded file should then be copied to the USB mass storage device that appears. Once programming of the new firmware is complete, the device will automatically reset and be ready for use.
 
 ## Keyboard Shortcuts
 

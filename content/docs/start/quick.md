@@ -33,13 +33,13 @@ You can download the extension from VS Code's Extensions panel by searching for 
 
 Firstly, create an empty folder for your project files. Then open this folder in VS Code.
 
-Access the Command Palette by typing `ctrl+shift+p` on Window or Linux, or `command+shift+p` on a Mac. Alternatively, click `All Commands` on the Pico-Go status bar.
+Access the Command Palette by typing `ctrl+shift+i` on Windows, `ctrl+shift+alt+i` on Linux, or `command+shift+i` on a Mac. 
 
-Then choose `Pico-Go > Configure project`.
+Alternatively, click `All Commands` on the Pico-Go status bar. Then choose `Pico-Go > Configure project`.
 
 This will set up code auto-completion for you.
 
-> If you're prompted to install recommended extensions or reload VS Code, make sure you do just that!
+> If you're prompted to install any workspace recommended extensions or reload VS Code, make sure you do just that!
 
 <img src="/images/configure-project.gif" class="anim"/>
 
@@ -73,7 +73,7 @@ and bask in your Pico glory!
 
 > If you can't seem to connect to your Pico, follow these [troubleshooting steps]({{< ref "../help/connect.md" >}}).
 
-### Copying files
+### Copying a file
 
 We're currently running your Python code on the Pico, however, what if we want the LED to flash automatically as soon as the Pico powers up? To do that, we need to transfer a `.py` file to the Pico!
 
@@ -81,8 +81,16 @@ Firstly, rename `flash.py` to `main.py`. Then choose the `Upload` button from th
 
 <img src="/images/upload.gif" class="anim"/>
 
-### Pin Map
+## Pin Map
 
-If you need a quick refresher on which pins can do what on the Pico board, or even just need help _locating_ a pin (it's often not easy on a soldered board!), check out `Pico-Go > Extras > Show Pico Pin Map`:
+If you need a quick refresher on which pins can do what on the Pico board, or even just need help _locating_ a pin (it's often not easy on a soldered board!), check out `Pico-Go > Help > Show Pico Pin Map`:
 
 <img src="/images/pin-map.gif" class="anim"/>
+
+## Managing files via FTP
+
+Pico-Go includes a tiny FTP server that allows you to manage the files on your Pico board via an FTP client This might be your go-to file management application or a VS Code extension with an FTP capability.
+
+You can start the FTP server via the Command Palette by choosing `Pico-Go > Start FTP server`. This will launch an FTP server on your local computer (`127.0.0.1`) on port `2121`. The username is `pico` and the default password is also `pico`, however the password can be changed in the [Global Settings]({{< ref "settings.md" >}}) by configuring the [`ftp_password`]({{< ref "settings.md#ftp_password" >}}) value. 
+
+<img src="/images/ftp.gif" class="anim"/>

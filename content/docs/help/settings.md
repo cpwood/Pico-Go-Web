@@ -48,6 +48,13 @@ If `true`, executes a ctrl-c on connect to stop running programs.
 |---------|--------|-----------------------|
 | yes     | yes    | `false`                |
 
+### ftp_password
+The password to use for authenticating with the Pico-Go FTP server.
+
+| Project | Global | Default               |
+|---------|--------|-----------------------|
+| no     | yes    | `pico`                |
+
 ### manual_com_device
 Used when `auto_connect` is false. E.g. `COM3` or `/dev/tty.usbmodem0000000000001`.
 

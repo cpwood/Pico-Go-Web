@@ -60,7 +60,7 @@ Used when `auto_connect` is false. E.g. `COM3` or `/dev/tty.usbmodem000000000000
 
 | Project | Global | Default               |
 |---------|--------|-----------------------|
-| no       | yes    | `true` |
+| yes       | yes    | `true` |
 
 ### open_on_start
 Whether to open the terminal and connect to the board when starting Code. The default setting (from `v1.2` onward) is to _not_ launch the Pico Console unless the project has been [configured as a Pico-Go project]({{< ref "../help/commands.md#configure-project" >}}).
@@ -75,6 +75,13 @@ Comma-separated list of files and folders to ignore when uploading (no wildcard 
 | Project | Global | Default               |
 |---------|--------|-----------------------|
 | yes     | yes    | `[]`                  |
+
+### python_path
+This allows you to set the path to the Python executable manually instead of relying on Python being in your PATH. E.g. `/path/to/python3`.
+
+| Project | Global | Default               |
+|---------|--------|-----------------------|
+| no     | yes    | `null`                  |
 
 ### reboot_after_upload
 Reboots your board after any upload or download action.

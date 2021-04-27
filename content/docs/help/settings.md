@@ -18,7 +18,7 @@ toc: true
 
 Global settings apply to all projects, unless overridden by project-level settings.
 
-You can access the global settings by typing `ctrl+shift+g` or using the `Pico-Go > Global settings` option in the Command Palette.
+You can access the global settings using the `Pico-Go > Global settings` option in the Command Palette.
 
 ### Project Settings
 
